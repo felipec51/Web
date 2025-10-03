@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <title>SUAMURT — Equilibrio entre salud y sabor</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link
+            href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&amp;family=Koulen&amp;display=swap"
+            rel="stylesheet">
+    </head>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Courier Prime', Arial, Helvetica, sans-serif;
+            background-color: #fafafa;
+            color: #222;
+            line-height: 1.6;
+        }
+
+
+        .nav-bar {
+            color: #000;
+            text-align: center;
+            font-family: "Koulen", sans-serif;
+            font-size: 25px;
+            font-weight: 400;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            position: fixed;
+            top: 10px;
+            width: 98%;
+            z-index: 100;
+            background-color: #f4f4f4;
+            border-radius: 50px;
+            padding: 10px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .txt {
+            color: #000;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .txt:hover {
+            text-decoration: underline;
+            text-decoration-color: rgb(90, 90, 90);
+            cursor: pointer;
+        }
+
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            text-align: center;
+            margin-top: 73px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        #intro {
+            margin-bottom: 50px;
+        }
+
+        #intro img.logo {
+            border-radius: 20%;
+            margin-bottom: 20px;
+            object-fit: contain;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #333;
+            max-width: 700px;
+            margin: auto;
+        }
+
+
+        section h3.title,
+        section h3.section-title {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 2rem;
+            margin: 30px 0 20px 0;
+            color: #2f594a;
+        }
+
+        section p.small {
+            font-size: 0.95rem;
+            margin: 5px 0;
+            color: #444;
+        }
+
+        .price {
+            font-weight: bold;
+            margin-top: 10px;
+            color: #2f594a;
+        }
+
+
+        table {
+            width: 100%;
+            max-width: 600px;
+            margin: auto;
+            border-collapse: collapse;
+        }
+
+        table th,
+        table td {
+            padding: 10px;
+        }
+
+        table img {
+            width: 100%;
+            max-width: 390px;
+            object-fit: cover;
+            border-radius: 5%;
+        }
+
+
+        .btn {
+            display: inline-block;
+            background-color: #2f594a;
+            color: #fff;
+            padding: 12px 25px;
+            margin: 10px 0;
+            border-radius: 8px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #3c7a66;
+        }
+
+
+        .team {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .member {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-align: left;
+            background-color: #f4f4f4;
+            padding: 10px 15px;
+            border-radius: 12px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .member .avatar {
+            width: 60px;
+            height: 60px;
+            background-color: #2f594a;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+            border-radius: 50%;
+        }
+
+        .faq p {
+            text-align: left;
+            margin-bottom: 15px;
+        }
+
+
+        blockquote {
+            background-color: #eaf1ed;
+            border-left: 5px solid #2f594a;
+            padding: 10px 15px;
+            margin: 15px auto;
+            max-width: 600px;
+            font-style: italic;
+        }
+
+
+        footer {
+            margin-top: 50px;
+            padding: 20px 10px;
+            background-color: #2f594a;
+            color: #fff;
+            font-size: 0.9rem;
+            text-align: center;
+            border-radius: 12px 12px 0 0;
+        }
+
+        img {
+            object-fit: contain;
+        }
+
+        @media screen and (max-width: 768px) {
+            .nav-bar {
+                flex-direction: column;
+                gap: 15px;
+                font-size: 20px;
+                display: flex;
+                position: relative;
+            }
+
+            .team {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            table img {
+                max-width: 100%;
+            }
+
+            .container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                height: 100%;
+                text-align: center;
+                font-family: Arial, Helvetica, sans-serif;
+                margin-top: 50px;
+            }
+
+        }
+    </style>
+
+    <body>
+        <header id="header">
+            <nav class="nav-bar">
+                <a class="txt" href="#quienes-somos">Quienes somos</a>
+                <a class="txt" href="#productos">Productos</a>
+                <a class="txt" href="#diferenciadores">Porque elegirnos</a>
+                <a class="txt" href="#equipo">Equipo</a>
+                <a class="txt" href="#contacto">Contactanos</a>
+                <a class="txt" href="#faq">FAQ</a>
+                <a class="txt" href="#testimonios">Testimonios</a>
+                <nav>
+        </header>
+        <div class="container">
+            <section id="intro">
+                <img src="https://i.postimg.cc/D0SNSbbW/logo.jpg" alt="Logo SUAMURT" class="logo" width="380" height="380"
+                    style="border-radius: 20%;">
+                <p class="subtitle">
+                    Yogurt griego único, elaborado con ingredientes naturales y kale seleccionado.
+                <p>Rico en proteínas, alto en nutrientes y pensado para quienes cuidan su salud sin sacrificar el
+                    sabor.</p>
+                </p>
+            </section>
+            <section id="productos">
+                <table style="width:100%; text-align:center;">
+                    <tr>
+                        <th colspan="1">
+                            <h3 class="section-title">Productos</h3>
+                        </th>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <h3>Mermelada — 150g</h3>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="https://i.postimg.cc/J0sFsBBG/mermelada.jpg" alt="Yogurt de Mermelada " width="390" height="390"
+                                style="border-radius: 5%;">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="small">Yogurt griego con coulis de mora natural, balance perfecto entre cremosidad
+                                y un toque ácido-frutal.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="small"><strong>Beneficios:</strong> Antioxidantes de la fruta, sabor fresco para
+                                acompañar granola y frutas.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="price">Precio: $6.000</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a class="btn btn-primary"
+                                href="https://wa.me/573105884301?text=Hola%2C%20quiero%20pedir%20SUAMURT%20Mora%20150g%20-%20Cantidad%3A%20">
+                                Pedir por WhatsApp
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th colspan="1">
+                            <h3 class="section-title">Productos</h3>
+                        </th>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <h3>Mermelada — 237g</h3>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="https://i.postimg.cc/J0sFsBBG/mermelada.jpg" alt="Yogurt de Mermelada " width="390" height="390"
+                                style="border-radius: 5%;">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="small">Yogurt griego con coulis de mora natural, balance perfecto entre cremosidad
+                                y un toque ácido-frutal.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="small"><strong>Beneficios:</strong> Antioxidantes de la fruta, sabor fresco para
+                                acompañar granola y frutas.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="price">Precio: $10.000</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a class="btn btn-primary"
+                                href="https://wa.me/573105884301?text=Hola%2C%20quiero%20pedir%20SUAMURT%20Mora%20237g%20-%20Cantidad%3A%20">
+                                Pedir por WhatsApp
+                            </a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><br>
+                            <h3>Granola con miel — 150g</h3>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="https://i.postimg.cc/wM1r1ssM/granola.jpg" alt="Yogurt con granola y miel" width="390" height="390"
+                                style="border-radius: 5%;">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="small">Yogurt griego con topping de granola artesanal y un hilo de miel natural.
+                                Textura crujiente y dulzor equilibrado.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="small"><strong>Beneficios:</strong> Energía sostenida, ideal como desayuno o
+                                merienda completa.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="price">Precio: $6.000</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a class="btn btn-primary"
+                                href="https://wa.me/573105884301?text=Hola%2C%20quiero%20pedir%20SUAMURT%20Granola%20con%20miel%20150g%20-%20Cantidad%3A%20">
+                                Pedir por WhatsApp
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><br>
+                            <h3>Granola con miel — 237g</h3>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="https://i.postimg.cc/wM1r1ssM/granola.jpg" alt="Yogurt con granola y miel" width="390" height="390"
+                                style="border-radius: 5%;">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="small">Yogurt griego con topping de granola artesanal y un hilo de miel natural.
+                                Textura crujiente y dulzor equilibrado.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="small"><strong>Beneficios:</strong> Energía sostenida, ideal como desayuno o
+                                merienda completa.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="price">Precio: $10.000</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a class="btn btn-primary"
+                                href="https://wa.me/573105884301?text=Hola%2C%20quiero%20pedir%20SUAMURT%20Granola%20con%20miel%20237g%20-%20Cantidad%3A%20">
+                                Pedir por WhatsApp
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><br>
+                            <h3>Natural — 150g</h3>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="https://i.postimg.cc/gjx7x66x/natural.jpg" alt="Yogurt natural griego" width="390" height="390"
+                                style="border-radius: 5%;">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="small">Yogurt griego cremoso, sabor suave y textura espesa. Ideal para quienes
+                                buscan una opción natural para desayunos o snacks.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="small"><strong>Beneficios:</strong> Alto en proteínas, sin azúcares añadidos
+                                (opción), probióticos naturales.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="price">Precio: $4.000</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a class="btn btn-primary"
+                                href="https://wa.me/573105884301?text=Hola%2C%20quiero%20pedir%20SUAMURT%20Natural%20150g%20-%20Cantidad%3A%20">
+                                Pedir por WhatsApp
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><br>
+                            <h3>Natural — 237g</h3>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="https://i.postimg.cc/gjx7x66x/natural.jpg" alt="Yogurt natural griego" width="390" height="390"
+                                style="border-radius: 5%;">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="small">Yogurt griego cremoso, sabor suave y textura espesa. Ideal para quienes
+                                buscan una opción natural para desayunos o snacks.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="small"><strong>Beneficios:</strong> Alto en proteínas, sin azúcares añadidos
+                                (opción), probióticos naturales.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="price">Precio: $6.300</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a class="btn btn-primary"
+                                href="https://wa.me/573105884301?text=Hola%2C%20quiero%20pedir%20SUAMURT%20Natural%20237g%20-%20Cantidad%3A%20">
+                                Pedir por WhatsApp
+                            </a>
+                        </td>
+                    </tr>
+                </table>
+
+                <div style="margin-top:12px">
+                    <h4>Información extra por producto</h4>
+                    <p class="small"><strong>Ingredientes base:</strong>
+                        leche pasteurizada, cultivo lácteo (probióticos),
+                        kale
+                        deshidratado/infusión de kale, azúcar/edulcorante
+                        opcional (según presentación), fruta natural (en
+                        sabor
+                        fruta), granola artesanal.</p>
+                    <p class="small"><strong>Alérgenos:</strong> Contiene
+                        leche. Puede contener trazas de frutos secos (si la
+                        granola está preparada con ellos).</p>
+                    <p class="small"><strong>Conservación:</strong> Mantener
+                        refrigerado entre 2–6 °C. Consumir antes de 7–14
+                        días
+                        según presentación.</p>
+                    <p class="small"><strong>Opciones especiales:</strong>
+                        edulcorante natural, sin azúcar añadida, formato
+                        familiar
+                        bajo pedido.</p>
+                </div>
+
+            </section>
+
+
+            <section id="diferenciadores">
+                <h3 class="title">Por qué elegirnos</h3>
+                <ol class="small">
+                    <li>Yogurt con kale — fórmula única: combinamos los
+                        beneficios del kale (antioxidantes, vitaminas) con
+                        la
+                        textura y proteína del yogurt griego.</li>
+                    <li>Ingredientes naturales y locales: priorizamos
+                        insumos frescos y proveedores locales.</li>
+                    <li>Sabor y salud juntos: recetas pensadas para quienes
+                        cuidan su alimentación sin renunciar al placer.</li>
+                    <li>Procesos artesanales con control de calidad:
+                        producción cuidada para conservar propiedades
+                        nutricionales.</li>
+                    <li>Opciones para todos: presentaciones para
+                        deportistas, niños y adultos; opciones sin azúcar en
+                        demanda.
+                    </li>
+                    <li>Empaque práctico: envases pensados para conservar
+                        frescura y ser fáciles de transportar.</li>
+                    <li>Compromiso social y ambiental: usamos medidas para
+                        minimizar desperdicios y promovemos consumo
+                        responsable.</li>
+                </ol>
+            </section>
+
+            <section id="equipo">
+                <h3 class="title">Equipo / Participantes</h3>
+                <div class="team">
+                    <div class="member">
+                        <div class="avatar" aria-hidden="true">KG</div>
+                        <div>
+                            <strong>Karol Garzón</strong>
+                            <div class="bio">Fundadora y líder del proyecto.
+                                Encargada de formulación y
+                                administración.</div>
+                        </div>
+                    </div>
+                </div>
+                <p class="small" style="margin-top:10px">Fundadora y líder del proyecto SUAMY. Profesional apasionada
+                    por la nutrición y la innovación en alimentos, encargada de la formulación y administración de la
+                    marca.</p>
+            </section>
+
+            <section id="contacto">
+                <h3 class="title">Contacto</h3>
+                <p class="small"><strong>Instagram:</strong> <a href="https://instagram.com/suamurt_yogurt"
+                        target="_blank" rel="noopener">@suamy_yogurt</a></p>
+                <p class="small"><strong>WhatsApp / Pedidos:</strong> <a href="https://wa.me/573105884301">+57 310 588
+                        4301</a>
+                </p>
+                <p class="small"><strong>Correo:</strong>
+                    contacto@suamy.com</p>
+                <p class="small"><strong>Horario de pedidos:</strong> Lunes
+                    a sábado — 8:00 a.m. a 6:00 p.m.</p>
+                <p class="small"><strong>Zona de entrega:</strong> Soacha y
+                    alrededores</p>
+
+            </section>
+            <section id="quienes-somos">
+                <h3 class="title">¿Quiénes somos?</h3>
+                <h2 class="title">Misión</h2>
+
+                <p class="small">Producir y ofrecer yogurt griego a base de kale, innovador y nutritivo, que combine
+                    salud y sabor, contribuyendo al bienestar de nuestros consumidores y fomentando hábitos de vida
+                    saludables.
+                </p>
+                <h2 class="title">Visión</h2>
+                <p class="small">Ser reconocidos en el mercado nacional como la marca pionera en yogurt de kale,
+                    destacándonos por la innovación, la calidad y el compromiso con una alimentación equilibrada y
+                    natural.
+                </p>
+                <h2 class="title">Valores</h2>
+
+                <p class="small">
+                    <li><strong>Salud:</strong> Prioridad por ingredientes funcionales y naturales..</li>
+                    <li><strong>Calidad:</strong> Control en cada proceso para ofrecer un producto seguro y delicioso.
+                    </li>
+                    <li><strong>Innovación:</strong> Formular sabores originales y nutricionalmente balanceados.</li>
+                    <li><strong>Sostenibilidad:</strong> Prácticas responsables en el uso de recursos y empaques.</li>
+                    <li><strong>Transparencia:</strong> Información clara sobre ingredientes y procesos.</li>
+                </p>
+            </section>
+
+            <section id="faq">
+                <h3 class="title">Preguntas frecuentes</h3>
+                <div class="faq">
+                    <p><strong>¿El yogurt contiene colorantes o sabores
+                            artificiales?</strong><br>No. Nuestras
+                        presentaciones
+                        usan ingredientes naturales y colorantes naturales
+                        cuando es necesario (por ejemplo, puré de mora).</p>
+                    <p><strong>¿Es apto para niños?</strong><br>Sí, salvo
+                        contraindicación médica. Recomendamos consultar con
+                        el
+                        pediatra si existe alergia a la leche.</p>
+                    <p><strong>¿Hacen envíos?</strong><br>Sí, dentro de
+                        Soacha; para otras zonas verifica disponibilidad y
+                        costo.</p>
+                    <p><strong>¿Puedo pedir por mayor para
+                            eventos?</strong><br>Sí — contacta por WhatsApp
+                        para cotización.</p>
+                </div>
+            </section>
+            <section id="testimonios">
+                <h3 class="title">Testimonios</h3>
+                <blockquote style="font-style:italic;color:#2f594a">“Me
+                    encanta la textura y el sabor. Es perfecto para mis
+                    desayunos.” — Camila R.</blockquote>
+                <blockquote style="font-style:italic;color:#2f594a">“Delicioso y me
+                    siento con más energía. Lo recomiendo.” —
+                    Andrés P.</blockquote>
+            </section>
+
+            </main>
+
+            <footer>
+                <div>© 2025 SUAMY — Equilibrio entre salud y sabor</div>
+                <div style="font-size:.8rem;margin-top:6px">Producto artesanal.
+                    Mantener en refrigeración.</div>
+            </footer>
+        </div>
+    </body>
+
+</html>
