@@ -5,11 +5,238 @@
         <meta charset="utf-8">
         <title>SUAMURT — Equilibrio entre salud y sabor</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="styles.css">
         <link
             href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&amp;family=Koulen&amp;display=swap"
             rel="stylesheet">
     </head>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Courier Prime', Arial, Helvetica, sans-serif;
+            background-color: #fafafa;
+            color: #222;
+            line-height: 1.6;
+        }
+
+
+        .nav-bar {
+            color: #000;
+            text-align: center;
+            font-family: "Koulen", sans-serif;
+            font-size: 25px;
+            font-weight: 400;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            position: fixed;
+            top: 10px;
+            width: 98%;
+            z-index: 100;
+            background-color: #f4f4f4;
+            border-radius: 50px;
+            padding: 10px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .txt {
+            color: #000;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .txt:hover {
+            text-decoration: underline;
+            text-decoration-color: rgb(90, 90, 90);
+            cursor: pointer;
+        }
+
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            text-align: center;
+            margin-top: 73px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        #intro {
+            margin-bottom: 50px;
+        }
+
+        #intro img.logo {
+            border-radius: 20%;
+            margin-bottom: 20px;
+            object-fit: contain;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #333;
+            max-width: 700px;
+            margin: auto;
+        }
+
+
+        section h3.title,
+        section h3.section-title {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 2rem;
+            margin: 30px 0 20px 0;
+            color: #2f594a;
+        }
+
+        section p.small {
+            font-size: 0.95rem;
+            margin: 5px 0;
+            color: #444;
+        }
+
+        .price {
+            font-weight: bold;
+            margin-top: 10px;
+            color: #2f594a;
+        }
+
+
+        table {
+            width: 100%;
+            max-width: 600px;
+            margin: auto;
+            border-collapse: collapse;
+        }
+
+        table th,
+        table td {
+            padding: 10px;
+        }
+
+        table img {
+            width: 100%;
+            max-width: 390px;
+            object-fit: cover;
+            border-radius: 5%;
+        }
+
+
+        .btn {
+            display: inline-block;
+            background-color: #2f594a;
+            color: #fff;
+            padding: 12px 25px;
+            margin: 10px 0;
+            border-radius: 8px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #3c7a66;
+        }
+
+
+        .team {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .member {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-align: left;
+            background-color: #f4f4f4;
+            padding: 10px 15px;
+            border-radius: 12px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .member .avatar {
+            width: 60px;
+            height: 60px;
+            background-color: #2f594a;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+            border-radius: 50%;
+        }
+
+        .faq p {
+            text-align: left;
+            margin-bottom: 15px;
+        }
+
+
+        blockquote {
+            background-color: #eaf1ed;
+            border-left: 5px solid #2f594a;
+            padding: 10px 15px;
+            margin: 15px auto;
+            max-width: 600px;
+            font-style: italic;
+        }
+
+
+        footer {
+            margin-top: 50px;
+            padding: 20px 10px;
+            background-color: #2f594a;
+            color: #fff;
+            font-size: 0.9rem;
+            text-align: center;
+            border-radius: 12px 12px 0 0;
+        }
+
+        img {
+            object-fit: contain;
+        }
+
+        @media screen and (max-width: 768px) {
+            .nav-bar {
+                flex-direction: column;
+                gap: 15px;
+                font-size: 20px;
+                display: flex;
+                position: relative;
+            }
+
+            .team {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            table img {
+                max-width: 100%;
+            }
+
+            .container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                height: 100%;
+                text-align: center;
+                font-family: Arial, Helvetica, sans-serif;
+                margin-top: 50px;
+            }
+
+        }
+    </style>
 
     <body>
         <header id="header">
@@ -25,7 +252,7 @@
         </header>
         <div class="container">
             <section id="intro">
-                <img src="/imagenes/logo.jpeg" alt="Logo SUAMURT" class="logo" width="380" height="380"
+                <img src="https://i.postimg.cc/D0SNSbbW/logo.jpg" alt="Logo SUAMURT" class="logo" width="380" height="380"
                     style="border-radius: 20%;">
                 <p class="subtitle">
                     Yogurt griego único, elaborado con ingredientes naturales y kale seleccionado.
@@ -48,7 +275,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <img src="/imagenes/mermelada.jpeg" alt="Yogurt de Mermelada " width="390" height="390"
+                            <img src="https://i.postimg.cc/J0sFsBBG/mermelada.jpg" alt="Yogurt de Mermelada " width="390" height="390"
                                 style="border-radius: 5%;">
                         </td>
                     </tr>
@@ -90,7 +317,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <img src="/imagenes/mermelada.jpeg" alt="Yogurt de Mermelada " width="390" height="390"
+                            <img src="https://i.postimg.cc/J0sFsBBG/mermelada.jpg" alt="Yogurt de Mermelada " width="390" height="390"
                                 style="border-radius: 5%;">
                         </td>
                     </tr>
@@ -127,7 +354,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <img src="/imagenes/granola.jpeg" alt="Yogurt con granola y miel" width="390" height="390"
+                            <img src="https://i.postimg.cc/wM1r1ssM/granola.jpg" alt="Yogurt con granola y miel" width="390" height="390"
                                 style="border-radius: 5%;">
                         </td>
                     </tr>
@@ -163,7 +390,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <img src="/imagenes/granola.jpeg" alt="Yogurt con granola y miel" width="390" height="390"
+                            <img src="https://i.postimg.cc/wM1r1ssM/granola.jpg" alt="Yogurt con granola y miel" width="390" height="390"
                                 style="border-radius: 5%;">
                         </td>
                     </tr>
@@ -199,7 +426,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <img src="/imagenes/natural.jpeg" alt="Yogurt natural griego" width="390" height="390"
+                            <img src="https://i.postimg.cc/gjx7x66x/natural.jpg" alt="Yogurt natural griego" width="390" height="390"
                                 style="border-radius: 5%;">
                         </td>
                     </tr>
@@ -235,7 +462,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <img src="/imagenes/natural.jpeg" alt="Yogurt natural griego" width="390" height="390"
+                            <img src="https://i.postimg.cc/gjx7x66x/natural.jpg" alt="Yogurt natural griego" width="390" height="390"
                                 style="border-radius: 5%;">
                         </td>
                     </tr>
@@ -330,7 +557,7 @@
                         </div>
                     </div>
                 </div>
-                <p class="small" style="margin-top:10px">Fundadora y líder del proyecto SUAMURT. Profesional apasionada
+                <p class="small" style="margin-top:10px">Fundadora y líder del proyecto SUAMY. Profesional apasionada
                     por la nutrición y la innovación en alimentos, encargada de la formulación y administración de la
                     marca.</p>
             </section>
@@ -338,17 +565,17 @@
             <section id="contacto">
                 <h3 class="title">Contacto</h3>
                 <p class="small"><strong>Instagram:</strong> <a href="https://instagram.com/suamurt_yogurt"
-                        target="_blank" rel="noopener">@suamurt_yogurt</a></p>
+                        target="_blank" rel="noopener">@suamy_yogurt</a></p>
                 <p class="small"><strong>WhatsApp / Pedidos:</strong> <a href="https://wa.me/573105884301">+57 310 588
                         4301</a>
                 </p>
                 <p class="small"><strong>Correo:</strong>
-                    contacto@suamurt.com</p>
+                    contacto@suamy.com</p>
                 <p class="small"><strong>Horario de pedidos:</strong> Lunes
                     a sábado — 8:00 a.m. a 6:00 p.m.</p>
                 <p class="small"><strong>Zona de entrega:</strong> Soacha y
                     alrededores</p>
-                
+
             </section>
             <section id="quienes-somos">
                 <h3 class="title">¿Quiénes somos?</h3>
@@ -367,7 +594,8 @@
 
                 <p class="small">
                     <li><strong>Salud:</strong> Prioridad por ingredientes funcionales y naturales..</li>
-                    <li><strong>Calidad:</strong> Control en cada proceso para ofrecer un producto seguro y delicioso.</li>
+                    <li><strong>Calidad:</strong> Control en cada proceso para ofrecer un producto seguro y delicioso.
+                    </li>
                     <li><strong>Innovación:</strong> Formular sabores originales y nutricionalmente balanceados.</li>
                     <li><strong>Sostenibilidad:</strong> Prácticas responsables en el uso de recursos y empaques.</li>
                     <li><strong>Transparencia:</strong> Información clara sobre ingredientes y procesos.</li>
@@ -394,8 +622,6 @@
                         para cotización.</p>
                 </div>
             </section>
-
-            <!-- Testimonios -->
             <section id="testimonios">
                 <h3 class="title">Testimonios</h3>
                 <blockquote style="font-style:italic;color:#2f594a">“Me
@@ -409,7 +635,7 @@
             </main>
 
             <footer>
-                <div>© 2025 SUAMURT — Equilibrio entre salud y sabor</div>
+                <div>© 2025 SUAMY — Equilibrio entre salud y sabor</div>
                 <div style="font-size:.8rem;margin-top:6px">Producto artesanal.
                     Mantener en refrigeración.</div>
             </footer>
